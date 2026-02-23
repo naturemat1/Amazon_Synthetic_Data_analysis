@@ -67,3 +67,6 @@ htmlcov/
 # Environment
 .env
 .env.local
+
+# Documentation build
+docs/_build/
