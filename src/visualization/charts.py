@@ -46,9 +46,6 @@ class ChartPlotter:
         value_column : str
             Value column to aggregate
         """
-        print("\n" + "="*80)
-        print("GRÁFICAS DE INGRESO X TIEMPO")
-        print("="*80)
         
         # Monthly series
         serie_mensual = self._df.set_index(date_column)[value_column].resample('ME').sum()
@@ -160,9 +157,6 @@ class ChartPlotter:
         save : bool
             Whether to save the figure
         """
-        print("\n" + "="*80)
-        print("GRÁFICAS DE DISPERSIÓN")
-        print("="*80)
         
         columns = columns or ['Quantity', 'UnitPrice', 'Discount', 'Tax', 'ShippingCost', 'TotalAmount']
         
@@ -214,9 +208,6 @@ class ChartPlotter:
         id_vars : list
             ID columns to plot
         """
-        print("\n" + "="*80)
-        print("DISTRIBUCIÓN DE INGRESOS POR ID + TOP/BOTTOM")
-        print("="*80)
         
         for col in id_vars:
             if col not in self._df.columns:
@@ -331,9 +322,6 @@ class ChartPlotter:
         df_plot : pd.DataFrame
             Data with Category, Product, TotalAmount, Type columns
         """
-        print("\n" + "="*80)
-        print("TOP 1 Y BOTTOM 1 PRODUCTOS POR CATEGORÍA")
-        print("="*80)
         
         df_plot['Label'] = df_plot['Category'] + ' - ' + df_plot['Product']
         
@@ -378,9 +366,6 @@ class ChartPlotter:
         df_plot : pd.DataFrame
             Data with State, Product, TotalAmount, Type columns
         """
-        print("\n" + "="*80)
-        print("TOP 1 Y BOTTOM 1 PRODUCTOS POR ESTADO")
-        print("="*80)
         
         df_plot['Label'] = df_plot['Product'] + '\n(' + df_plot['State'] + ')'
         

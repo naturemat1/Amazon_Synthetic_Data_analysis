@@ -106,9 +106,6 @@ class ExploratoryDataAnalysis:
     
     def get_correlation_matrix(self, columns: Optional[List[str]] = None) -> pd.DataFrame:
         """Calculate correlation matrix for numeric columns."""
-        print("\n" + "="*80)
-        print("MATRIZ DE CORRELACIONES (Variables Numéricas)")
-        print("="*80)
         
         df_numeric = self._df.select_dtypes(include=['number'])
         

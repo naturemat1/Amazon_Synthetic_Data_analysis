@@ -142,7 +142,7 @@ class DataCleaner:
             Total sum
         """
         print("\n" + "="*80)
-        print(f"7. Ingreso Total")
+        print(f"Ingreso Total")
         print("="*80)
         
         total_income = self._original_df[column].sum()
