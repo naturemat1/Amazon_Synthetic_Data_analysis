@@ -2,6 +2,9 @@
 
 A modular Python project for analyzing Amazon sales data with exploratory data analysis (EDA), visualizations, and customer segmentation using machine learning.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
+
 ## 📊 Project Overview
 
 This project performs comprehensive analysis on Amazon sales data, including:
@@ -25,25 +28,19 @@ analisis-de-datos/
 │   ├── visualization/  # Plots and charts
 │   ├── clustering/     # PCA, K-Means, segmentation
 │   └── reports/        # Report generation
+├── tests/              # Test files
+├── notebooks/          # Jupyter notebooks
+├── docs/               # Documentation
 ├── data/               # Data files (amazon.csv)
-├── output/             # Generated visualizations
 ├── main.py             # Main entry point
-└── requirements.txt    # Dependencies
+├── requirements.txt    # Dependencies
+├── LICENSE             # MIT License
+└── README.md           # This file
 ```
 
-### Module Descriptions
+## 🚀 Quick Start
 
-| Module | Description |
-|--------|-------------|
-| `config` | Configuration constants, column names, settings |
-| `core` | Utilities (formatters, display config) |
-| `data` | DataLoader and DataCleaner classes |
-| `analysis` | ExploratoryDataAnalysis and StatisticalAnalyzer |
-| `visualization` | DistributionPlotter and ChartPlotter |
-| `clustering` | PCAModel, KMeansModel, CustomerSegmenter |
-| `reports` | ReportGenerator for summaries |
-
-## 🚀 Installation
+### Installation
 
 1. **Clone the repository:**
    ```bash
@@ -55,8 +52,7 @@ analisis-de-datos/
    ```bash
    python -m venv venv
    source venv/bin/activate  # Linux/Mac
-   # or
-   venv\Scripts\activate    # Windows
+   venv\Scripts\activate      # Windows
    ```
 
 3. **Install dependencies:**
@@ -64,57 +60,32 @@ analisis-de-datos/
    pip install -r requirements.txt
    ```
 
-## 📦 Dependencies
+### Usage
 
-```
-pandas
-matplotlib
-seaborn
-scikit-learn
-numpy
-```
-
-## 🎯 Usage
-
-### Run Full Analysis
-
+#### Run Full Analysis
 ```bash
 python main.py
 ```
 
-This will execute the complete pipeline:
-1. Load and clean data
-2. Perform EDA
-3. Generate visualizations
-4. Perform customer segmentation
-
-### Run Specific Modules
-
-You can also import and use individual modules:
-
-```python
-from src.data import DataLoader, DataCleaner
-from src.visualization import DistributionPlotter
-from src.clustering import CustomerSegmenter
-
-# Load data
-loader = DataLoader("amazon.csv")
-df = loader.load()
-
-# Clean data
-cleaner = DataCleaner(df)
-df_clean = cleaner.get_processed_data()
-
-# Visualize distributions
-plotter = DistributionPlotter(df_clean)
-plotter.plot_numeric_distributions()
-
-# Segment customers
-segmenter = CustomerSegmenter(df_clean, original_df)
-segmenter.perform_clustering(n_clusters=4)
+#### Run Tests
+```bash
+pytest tests/
 ```
 
-## 📈 Features
+#### Use Jupyter Notebooks
+```bash
+jupyter notebook notebooks/analisis_exploratorio.ipynb
+```
+
+## 📦 Dependencies
+
+- `pandas` - Data manipulation
+- `matplotlib` - Plotting library
+- `seaborn` - Statistical graphics
+- `scikit-learn` - Machine learning
+- `numpy` - Numerical computing
+
+## 🎯 Features
 
 ### Data Analysis
 - Basic statistics (numeric & categorical)
@@ -153,15 +124,40 @@ Edit `src/config/settings.py` to customize:
 - K-Means and PCA parameters
 - Plot styling
 
+## 📁 Project Structure
+
+| Directory | Description |
+|-----------|-------------|
+| `src/config/` | Configuration constants |
+| `src/core/` | Utilities (formatters, display config) |
+| `src/data/` | DataLoader and DataCleaner classes |
+| `src/analysis/` | ExploratoryDataAnalysis and StatisticalAnalyzer |
+| `src/visualization/` | DistributionPlotter and ChartPlotter |
+| `src/clustering/` | PCAModel, KMeansModel, CustomerSegmenter |
+| `src/reports/` | ReportGenerator for summaries |
+| `tests/` | Unit tests |
+| `notebooks/` | Jupyter notebooks |
+| `docs/` | Project documentation |
+
+## 📖 Documentation
+
+- [Wiki](docs/wiki/Home.md) - Detailed documentation
+- [Module Reference](docs/wiki/Home.md#modules-overview) - API documentation
+
+
 ## 📝 License
 
-This project is for educational purposes.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👤 Author
 
-Your Name
+Mateo Cobo 
 
 ## 🙏 Acknowledgments
 
 - Original data source: Amazon sales dataset
 - Built with: pandas, matplotlib, seaborn, scikit-learn
+
+---
+
+⭐ If you find this project useful, please give it a star!
